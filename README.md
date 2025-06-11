@@ -42,18 +42,35 @@ Each benchmark will run until the target quality is reached and then stop, print
 
 Some these benchmarks are rather slow or take a long time to run on the reference hardware. We expect to see significant performance improvements with more hardware and optimized implementations. 
 
+# MLPerf Training v5.0 (Submission Deadline May 2, 2025)
+
+* Framework here is given for the reference implementation. Submitters are free to use their own frameworks to run the benchmark. 
+* Model parameter count is not the same as active parameter that are being trained in the benchmark. 
+
+| Model | reference implementation | framework | dataset | model parameter count
+| ---- | ---- | ---- | ---- | ----
+| retinanet | [single_stage_detector](https://github.com/mlcommons/training/tree/master/single_stage_detector) | pytorch | OpenImages | 37M
+| stable_diffusion | [stable_diffusion](https://github.com/mlcommons/training/tree/master/stable_diffusion) | pytorch | LAION-400M-filtered | 865M
+| bert | [language_model](https://github.com/mlcommons/training/tree/master/language_model/tensorflow/bert) | tensorflow | Wikipedia 2020/01/01 | 340M
+| llama3.1_405b | [large_language_model_pretraining](https://github.com/mlcommons/training/tree/master/large_language_model_pretraining) | NeMo | C4 | 405B
+| llama2_70b_lora | [llama2_70b_lora](https://github.com/mlcommons/training/tree/master/llama2_70b_lora) | pytorch | SCROLLS GovReport | 70B
+| dlrm_dcnv2 | [recommendation_v2](https://github.com/mlcommons/training/tree/master/recommendation_v2/torchrec_dlrm) | torchrec | Criteo 3.5TB multi-hot | 167M
+| rgat | [graph_neural_network](https://github.com/mlcommons/training/tree/master/graph_neural_network) | GLT | IGBFull | 25M
+
 # MLPerf Training v4.1 (Submission Deadline Oct 11, 2024)
 *Framework here is given for the reference implementation. Submitters are free to use their own frameworks to run the benchmark.
 
-| model | reference implementation | framework | dataset
-| ---- | ---- | ---- | ---- |
-| RetinaNet | [vision/object detection](https://github.com/mlcommons/training/tree/master/single_stage_detector) | pytorch | OpenImages
-| Stable Diffusionv2 | [image generation](https://github.com/mlcommons/training/tree/master/stable_diffusion) | pytorch | LAION-400M-filtered
-| BERT-large | [language/nlp](https://github.com/mlcommons/training/tree/master/language_model/tensorflow/bert) | tensorflow | Wikipedia 2020/01/01
-| GPT3 | [language/llm](https://github.com/mlcommons/training/tree/master/large_language_model) | paxml,megatron-lm | C4
-| LLama2 70B-LoRA | [language/LLM fine-tuning](https://github.com/mlcommons/training/tree/master/llama2_70b_lora) | pytorch | SCROLLS GovReport
-| DLRMv2 | [recommendation](https://github.com/mlcommons/training/tree/master/recommendation_v2/torchrec_dlrm) | torchrec | Criteo 3.5TB multi-hot
-| RGAT | [GNN](https://github.com/mlcommons/training/tree/master/graph_neural_network) | pytorch | IGBFull
+| model | reference implementation | framework | dataset | model parameter count
+| ---- | ---- | ---- | ---- | ----
+| RetinaNet | [vision/object detection](https://github.com/mlcommons/training/tree/master/single_stage_detector) | pytorch | OpenImages | 37M
+| Stable Diffusionv2 | [image generation](https://github.com/mlcommons/training/tree/master/stable_diffusion) | pytorch | LAION-400M-filtered | 865M
+| BERT-large | [language/nlp](https://github.com/mlcommons/training/tree/master/language_model/tensorflow/bert) | tensorflow | Wikipedia 2020/01/01 | 340M
+| GPT3 | [language/llm](https://github.com/mlcommons/training/tree/master/large_language_model) | paxml,megatron-lm | C4 | 175B
+| LLama2 70B-LoRA | [language/LLM fine-tuning](https://github.com/mlcommons/training/tree/master/llama2_70b_lora) | pytorch | SCROLLS GovReport | 70B
+| DLRMv2 | [recommendation](https://github.com/mlcommons/training/tree/master/recommendation_v2/torchrec_dlrm) | torchrec | Criteo 3.5TB multi-hot | 167M
+| RGAT | [GNN](https://github.com/mlcommons/training/tree/master/graph_neural_network) | pytorch | IGBFull | 25M 
+
+*Note model parameter count is not the same as active parameter that are being trained in the benchmark. 
 
 # MLPerf Training v4.0 (Submission Deadline May 10, 2024)
 *Framework here is given for the reference implementation. Submitters are free to use their own frameworks to run the benchmark.
